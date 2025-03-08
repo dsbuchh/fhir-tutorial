@@ -10,12 +10,16 @@
 <script>
 console.log('hi mom');
 FHIR.oauth2.ready()
-    .then(client => client.request("Patient"))
-    .then(console.log)
-    .catch(console.error);
+    .then(client => client.request("Patient/" + client.patient.id))
+    .then(patient => {
+        console.log("Patient Data:", patient);
+    })
+    .catch(error => {
+        console.error("Error fetching patient data:", error);
+    });
 </script>
 <body>
-    <h1>Welcome to my github FHIR page CDN v9</h1>
+    <h1>Welcome to my github FHIR page CDN v10</h1>
     <p>Hello world!</p>
 </body>
 </html>

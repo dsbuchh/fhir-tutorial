@@ -20,14 +20,13 @@
 
               // The client_id that you should have obtained after registering a client at
               // the EHR.
-              clientId: "fc141c4f-54ff-4e97-9c3c-68a79db58c5e",
+              clientId: "my_web_app",
 
               // The scopes that you request from the EHR
               scope: [
                 "launch",           // Get the launch context in EHR launch mode
                 "openid fhirUser",  // Get the current user
-                "patient/Patient.read",   // Read patient data
-                "online_access" //Can obtain refresh token; Required for EHR launch
+                "patient/*.read",   // Read patient data
               ].join(" "),
 
               // Typically, if your redirectUri points to the root of the current directory
