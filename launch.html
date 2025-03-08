@@ -9,13 +9,6 @@
     </head>
     <body>
         <script>
-          var url = new URL(location.href);
-          if (!url.searchParams.has("launch") || !url.searchParams.has("iss")) {
-            url.searchParams.set("launch", "eyJhIjoiMSIsImciOiIxIn0");
-            url.searchParams.set("iss", "https://launch.smarthealthit.org/v/r3/fhir");
-            document.body.innerHTML = '<a href="' + url.href + '">Click here to simulate EHR launch</a>';
-          }
-          else {
             FHIR.oauth2.authorize({
 
               // The client_id that you should have obtained after registering a client at
@@ -37,7 +30,6 @@
               // in that directory.
               redirectUri: "index.html"
             });
-          }
         </script>
     </body>
 </html>
