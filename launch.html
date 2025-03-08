@@ -21,14 +21,7 @@
                 "openid fhirUser",  // Get the current user
                 "patient/Patient.read",   // Read patient data
                 "online_access" //Can obtain refresh token; Required for EHR launch
-              ].join(" "),
-
-              // Typically, if your redirectUri points to the root of the current directory
-              // (where the launchUri is), you can omit this option because the default
-              // value is ".". However, some servers (like this one) do not support directory
-              // indexes so "." and "./" will not automatically map to the "index.html" file
-              // in that directory. 
-              redirectUri: "index.html"
+              ].join(" ")
             });
         </script>
     </body>
