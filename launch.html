@@ -5,10 +5,10 @@ FHIR.oauth2.authorize({
     "client_id": "fc141c4f-54ff-4e97-9c3c-68a79db58c5e",
     scope: [
                 "launch",           // Get the launch context in EHR launch mode
-                "profile fhirUser openid",  // Get the current user
+                "fhirUser openid",  // Get the current user; Required for EHR launch
                 "patient/Patient.read",   // Read patient data
-                "online_access" //Can obtain refresh token
-              ].join(" ")
- //   "scope": "user/Patient.read launch profile fhirUser openid"
+                "online_access" //Can obtain refresh token; Required for EHR launch
+              ].join(" ")             
+ //   "scope": "patient/Patient.read patient/Observation.read launch online_access openid profile"
 });
 </script>
