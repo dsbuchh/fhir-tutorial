@@ -1,0 +1,8 @@
+<!-- launch.html -->
+<script src="./node_module/fhirclient/build/fhir-client.js"></script>
+<script>
+FHIR.oauth2.authorize({
+    "client_id": "fc141c4f-54ff-4e97-9c3c-68a79db58c5e",
+    "scope": "patient/*.read"
+});
+</script>
