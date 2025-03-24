@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>FHIR basic test</title>
+        <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
+    </head>
+    <body>
+        <script>
+            FHIR.oauth2.authorize({
+
+              // The client_id that you should have obtained after registering a client at
+              // the EHR.
+              clientId: "fc141c4f-54ff-4e97-9c3c-68a79db58c5e", //smart v2
+
+              // The scopes that you request from the EHR
+              scope: [
+                "launch", // Get the launch context in EHR launch mode
+                "openid", // Get the current user
+                "fhirUser",  // Get the current user
+                "patient/Patient.read",   // Read patient data
+                "online_access" //Can obtain refresh token; Required for EHR launch
+              ].join(" ")
+            });
+        </script>
+    </body>
+</html>
