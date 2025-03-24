@@ -22,7 +22,11 @@
                 "fhirUser",  // Get the current user
                 "patient/Patient.read",   // Read patient data
                 "online_access" //Can obtain refresh token; Required for EHR launch
-              ].join(" ")
+              ].join(" "),
+
+              // Enable PKCE (Proof Key for Code Exchange) - Required in STU 2
+              pkce: true,
+              aud: "https://fhir-ehr-code.cerner.com/r4/ec2458f2-1e24-41c8-b71b-0e701af7583d"
             });
         </script>
     </body>
