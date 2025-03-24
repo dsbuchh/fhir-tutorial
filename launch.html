@@ -17,8 +17,9 @@
 
               // The scopes that you request from the EHR
               scope: [
-                "launch",           // Get the launch context in EHR launch mode
-                "openid fhirUser",  // Get the current user
+                "launch", // Get the launch context in EHR launch mode
+                "openid", // Get the current user
+                "fhirUser",  // Get the current user
                 "patient/Patient.read",   // Read patient data
                 "online_access" //Can obtain refresh token; Required for EHR launch
               ].join(" ")
