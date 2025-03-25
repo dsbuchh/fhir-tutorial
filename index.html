@@ -16,7 +16,7 @@ FHIR.oauth2.ready()
         client.request("Patient/" + client.patient.id);
     })
     .then(patient => {
-        console.log("Patient Data:", client.patient);
+        console.log("Client.Patient Data:", client.patient);
         document.body.innerHTML = `<pre>${JSON.stringify(client.patient, null, 2)}</pre>`
     })
     .catch(error => {
