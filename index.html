@@ -7,25 +7,25 @@
     <title>My GitHub Page</title>
 </head>
 <script src="https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js"></script>
-<script>
-console.log('hi mom');
-
-FHIR.oauth2.ready()
-    .then(client => {
-        //console.log(client.request(client.user.fhirUser));
-        return client.request("Patient/" + client.patient.id);
-    })
-    .then(patient => {
-        console.log("Client Data:", patient);
-        document.getElementById("patientResult").innerHTML = `<pre>${JSON.stringify(patient, null, 2)}</pre>`
-    })
-    .catch(error => {
-        console.error("Error fetching patient data:", error);
-    });
-</script>
 <body>
     <h1>Welcome to my github FHIR</h1>
     <p>Hello world!</p>
     <div id="patientResult"></div>
 </body>
+
+<script>
+    console.log('hi mom');
+    FHIR.oauth2.ready()
+        .then(client => {
+            //console.log(client.request(client.user.fhirUser));
+            return client.request("Patient/" + client.patient.id);
+        })
+        .then(patient => {
+            console.log("Client Data:", patient);
+            document.getElementById("patientResult").innerHTML = `<pre>${JSON.stringify(patient, null, 2)}</pre>`
+        })
+        .catch(error => {
+            console.error("Error fetching patient data:", error);
+        });
+</script>
 </html>
