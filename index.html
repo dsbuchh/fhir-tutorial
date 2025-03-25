@@ -14,7 +14,7 @@ FHIR.oauth2.ready()
     .then(client => {
         //console.log(client.request(client.user.fhirUser));
         //client.request("Patient/" + client.patient.id);
-        client.request("Patient/${client.patient.id}");
+        client.request("Patient/{client.patient.id}");
     })
     .then(patient => {
         console.log("Patient Data:", patient);
