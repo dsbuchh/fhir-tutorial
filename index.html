@@ -17,14 +17,15 @@ FHIR.oauth2.ready()
     })
     .then(patient => {
         console.log("Client Data:", patient);
-        document.body.innerHTML = `<pre>${JSON.stringify(patient, null, 2)}</pre>`
+        document.getElementById("patientResult").innerHTML = `<pre>${JSON.stringify(patient, null, 2)}</pre>`
     })
     .catch(error => {
         console.error("Error fetching patient data:", error);
     });
 </script>
 <body>
-    <h1>Welcome to my github FHIR page CDN v10</h1>
+    <h1>Welcome to my github FHIR</h1>
     <p>Hello world!</p>
+    <div id="patientResult"></div>
 </body>
 </html>
