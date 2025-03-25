@@ -13,11 +13,11 @@ console.log('hi mom');
 FHIR.oauth2.ready()
     .then(client => {
         //console.log(client.request(client.user.fhirUser));
-        client.request("Patient/" + client.patient.id);
+        return client.request("Patient/" + client.patient.id);
     })
     .then(patient => {
-        console.log("Client.Patient Data:", client.patient);
-        document.body.innerHTML = `<pre>${JSON.stringify(client.patient, null, 2)}</pre>`
+        console.log("Client Data:", patient);
+        document.body.innerHTML = `<pre>${JSON.stringify(patient, null, 2)}</pre>`
     })
     .catch(error => {
         console.error("Error fetching patient data:", error);
